@@ -1,0 +1,11 @@
+groups:
+- name: example
+  rules:
+  - alert: HighNumberOfConnections
+    expr: active_connections > 100
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High number of active connections"
+      description: "Number of active connections is {{ $value }} for the last 5 minutes."
